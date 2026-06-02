@@ -69,43 +69,42 @@
 :root {
   --radius: 0.5rem;
 
-  /* #0b0b0b */
-  --background: oklch(0.145 0 0);
   /* #ffffff */
-  --foreground: oklch(1 0 0);
-  /* #141414 */
-  --surface: oklch(0.185 0 0);
-  /* #1b1b1b */
-  --card: oklch(0.215 0 0);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.185 0 0);
-  --popover-foreground: oklch(1 0 0);
+  --background: oklch(1 0 0);
+  /* dark navy #1a2035 */
+  --foreground: oklch(0.24 0.04 272);
+  /* light blue-gray #f3f5fb */
+  --surface: oklch(0.97 0.012 272);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.04 272);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.04 272);
 
-  /* gold primary #c49b63 */
-  --primary: oklch(0.72 0.082 75);
-  --primary-foreground: oklch(0.145 0 0);
+  /* brand navy #262d7a */
+  --primary: oklch(0.33 0.16 273);
+  --primary-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.215 0 0);
-  --secondary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.012 272);
+  --secondary-foreground: oklch(0.24 0.04 272);
 
-  --muted: oklch(0.215 0 0);
-  /* #cfcfcf */
-  --muted-foreground: oklch(0.84 0 0);
+  --muted: oklch(0.96 0.012 272);
+  /* gray #5b6072 */
+  --muted-foreground: oklch(0.5 0.03 272);
 
-  --accent: oklch(0.215 0 0);
-  --accent-foreground: oklch(1 0 0);
+  --accent: oklch(0.95 0.02 272);
+  --accent-foreground: oklch(0.33 0.16 273);
 
-  /* luxury gold #c49b63 */
-  --gold: oklch(0.72 0.082 75);
-  --gold-foreground: oklch(0.145 0 0);
+  /* brand navy #262d7a (kept as accent token) */
+  --gold: oklch(0.33 0.16 273);
+  --gold-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.58 0.22 27);
   --destructive-foreground: oklch(1 0 0);
 
-  /* rgba(255,255,255,0.08) */
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.72 0.082 75);
+  /* light gray border */
+  --border: oklch(0.88 0.012 272);
+  --input: oklch(0.88 0.012 272);
+  --ring: oklch(0.33 0.16 273);
 }
 
 /* App is dark-luxury by default; .dark mirrors :root so shadcn dark variants stay consistent. */
