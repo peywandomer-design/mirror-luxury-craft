@@ -50,7 +50,12 @@ export function Hero() {
           <Button asChild variant="gold" size="xl">
             <a href="#stock">View Our Stock</a>
           </Button>
-          <Button asChild variant="glass" size="xl">
+          <Button
+            asChild
+            variant="glass"
+            size="xl"
+            className="border-primary-foreground/40 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
+          >
             <a href="#contact">Speak To Our Team</a>
           </Button>
         </div>
