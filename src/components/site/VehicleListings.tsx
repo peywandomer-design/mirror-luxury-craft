@@ -37,7 +37,7 @@ export function VehicleListings() {
           </p>
         ) : (
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {vehicles.map((vehicle, i) => (
+            {vehicles.map((vehicle) => (
               <div key={vehicle.id} className="h-full">
                 <VehicleCard vehicle={vehicle} />
               </div>
