@@ -1,8 +1,10 @@
-import { vehicles } from "@/data/vehicles";
 import { VehicleCard } from "./VehicleCard";
 import { Button } from "@/components/ui/button";
+import { useVehicles } from "@/hooks/use-vehicles";
 
 export function VehicleListings() {
+  const { data: vehicles = [], isLoading } = useVehicles();
+
   return (
     <section id="stock" className="py-20 sm:py-28">
       <div className="container-luxe">
@@ -20,17 +22,28 @@ export function VehicleListings() {
           </p>
         </div>
 
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {vehicles.map((vehicle, i) => (
-            <div
-              key={vehicle.id}
-              className="reveal h-full"
-              style={{ transitionDelay: `${(i % 3) * 90}ms` }}
-            >
-              <VehicleCard vehicle={vehicle} />
-            </div>
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="h-[420px] animate-pulse rounded-xl border border-border bg-card"
+              />
+            ))}
+          </div>
+        ) : vehicles.length === 0 ? (
+          <p className="py-10 text-center text-muted-foreground">
+            No vehicles in stock right now. Please check back soon.
+          </p>
+        ) : (
+          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {vehicles.map((vehicle) => (
+              <div key={vehicle.id} className="h-full">
+                <VehicleCard vehicle={vehicle} />
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="reveal mt-14 text-center">
           <Button asChild variant="gold" size="xl">

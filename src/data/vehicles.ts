@@ -1,97 +1,16 @@
-import vehicle1 from "@/assets/vehicle-1.jpg";
-import vehicle2 from "@/assets/vehicle-2.jpg";
-import vehicle3 from "@/assets/vehicle-3.jpg";
-import vehicle4 from "@/assets/vehicle-4.jpg";
-import vehicle5 from "@/assets/vehicle-5.jpg";
-import vehicle6 from "@/assets/vehicle-6.jpg";
-
 export interface Vehicle {
   id: string;
   name: string;
   type: string;
-  year: number;
+  year: number | null;
   mileage: string;
   fuel: string;
   transmission: string;
   price: string;
   image: string;
-  featured?: boolean;
+  featured: boolean;
+  sort_order: number;
 }
-
-export const vehicles: Vehicle[] = [
-  {
-    id: "fh-540",
-    name: "Volvo FH 540 Globetrotter",
-    type: "Tractor Unit",
-    year: 2021,
-    mileage: "412,000 km",
-    fuel: "Diesel",
-    transmission: "Automatic",
-    price: "£58,950",
-    image: vehicle1,
-    featured: true,
-  },
-  {
-    id: "scania-r450",
-    name: "Scania R450 Curtainsider",
-    type: "Tractor & Trailer",
-    year: 2020,
-    mileage: "498,500 km",
-    fuel: "Diesel",
-    transmission: "Automatic",
-    price: "£62,500",
-    image: vehicle3,
-    featured: true,
-  },
-  {
-    id: "daf-lf260",
-    name: "DAF LF 260 Box Rigid",
-    type: "Rigid Truck",
-    year: 2019,
-    mileage: "286,300 km",
-    fuel: "Diesel",
-    transmission: "Manual",
-    price: "£34,750",
-    image: vehicle2,
-    featured: true,
-  },
-  {
-    id: "man-tgs",
-    name: "MAN TGS 35.420 Tipper",
-    type: "Tipper",
-    year: 2022,
-    mileage: "164,900 km",
-    fuel: "Diesel",
-    transmission: "Automatic",
-    price: "£71,995",
-    image: vehicle5,
-    featured: true,
-  },
-  {
-    id: "merc-sprinter",
-    name: "Mercedes-Benz Sprinter 314",
-    type: "Panel Van",
-    year: 2021,
-    mileage: "92,400 km",
-    fuel: "Diesel",
-    transmission: "Manual",
-    price: "£21,450",
-    image: vehicle4,
-    featured: true,
-  },
-  {
-    id: "cat-320",
-    name: "CAT 320 Tracked Excavator",
-    type: "Plant",
-    year: 2020,
-    mileage: "5,200 hrs",
-    fuel: "Diesel",
-    transmission: "Hydrostatic",
-    price: "£84,000",
-    image: vehicle6,
-    featured: true,
-  },
-];
 
 export const categories = [
   { label: "Tractor Units", count: 86 },

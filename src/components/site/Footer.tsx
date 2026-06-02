@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 
 const columns = [
@@ -110,6 +111,7 @@ export function Footer() {
           <p className="flex gap-5">
             <a href="#" className="transition-colors hover:text-foreground">Privacy Policy</a>
             <a href="#" className="transition-colors hover:text-foreground">Terms</a>
+            <Link to="/admin" className="transition-colors hover:text-foreground">Admin</Link>
           </p>
         </div>
       </div>

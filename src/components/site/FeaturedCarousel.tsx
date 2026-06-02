@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { vehicles } from "@/data/vehicles";
 import { VehicleCard } from "./VehicleCard";
 import { Button } from "@/components/ui/button";
+import { useVehicles } from "@/hooks/use-vehicles";
 
 export function FeaturedCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const { data: vehicles = [] } = useVehicles();
 
   const scrollBy = (dir: 1 | -1) => {
     const track = trackRef.current;
@@ -15,6 +16,8 @@ export function FeaturedCarousel() {
   };
 
   const featured = vehicles.filter((v) => v.featured);
+
+  if (featured.length === 0) return null;
 
   return (
     <section id="featured" className="border-y border-border bg-surface py-20 sm:py-28">
@@ -51,7 +54,7 @@ export function FeaturedCarousel() {
 
         <div
           ref={trackRef}
-          className="reveal flex snap-x snap-mandatory gap-7 overflow-x-auto pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory gap-7 overflow-x-auto pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {featured.map((vehicle) => (
             <div
