@@ -38,11 +38,7 @@ export function VehicleListings() {
         ) : (
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((vehicle, i) => (
-              <div
-                key={vehicle.id}
-                className="reveal h-full"
-                style={{ transitionDelay: `${(i % 3) * 90}ms` }}
-              >
+              <div key={vehicle.id} className="h-full">
                 <VehicleCard vehicle={vehicle} />
               </div>
             ))}
