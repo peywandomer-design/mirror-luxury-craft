@@ -69,12 +69,10 @@ function LoginPage() {
         <div className="rounded-xl border border-border bg-card p-8 shadow-[var(--shadow-elevate)]">
           <p className="eyebrow">Restricted Area</p>
           <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground">
-            {mode === "login" ? "Admin Sign In" : "Create Admin Account"}
+            Admin Sign In
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            {mode === "login"
-              ? "Sign in to manage your stock listings."
-              : "Set up your owner account. The first account created becomes the administrator."}
+            Sign in to manage your stock listings.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-7 space-y-5">
@@ -95,7 +93,7 @@ function LoginPage() {
               <Input
                 id="password"
                 type="password"
-                autoComplete={mode === "login" ? "current-password" : "new-password"}
+                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
@@ -110,22 +108,9 @@ function LoginPage() {
             )}
 
             <Button type="submit" variant="gold" size="lg" className="w-full" disabled={loading}>
-              {loading ? "Please wait…" : mode === "login" ? "Sign In" : "Create Account"}
+              {loading ? "Please wait…" : "Sign In"}
             </Button>
           </form>
-
-          <button
-            type="button"
-            onClick={() => {
-              setMode((m) => (m === "login" ? "signup" : "login"));
-              setError("");
-            }}
-            className="mt-6 w-full text-center text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-gold"
-          >
-            {mode === "login"
-              ? "Need to set up your account? Register"
-              : "Already have an account? Sign in"}
-          </button>
         </div>
 
         <div className="mt-6 text-center">
