@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DriveLux Motors</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* Navigation */
+nav{
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* Hero */
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#38bdf8;
+    color:white;
+    padding:14px 28px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0284c7;
+}
+
+/* Search */
+.search-section{
+    padding:50px 8%;
+    text-align:center;
+}
+
+.search-section h2{
+    margin-bottom:20px;
+}
+
+#searchInput{
+    width:100%;
+    max-width:500px;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+/* Cars */
+.cars{
+    padding:40px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+.car-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.car-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.car-card:hover{
+    transform:translateY(-10px);
+}
+
+.car-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.car-info{
+    padding:20px;
+}
+
+.car-info h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:#0ea5e9;
+    font-size:1.3rem;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* About */
+.about{
+    background:white;
+    padding:70px 8%;
+    text-align:center;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* Contact */
+.contact{
+    padding:70px 8%;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+}
+
+.contact h2{
+    margin-bottom:15px;
+}
+
+footer{
+    background:#020617;
+    color:#aaa;
+    text-align:center;
+    padding:20px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">DriveLux Motors</div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#cars">Cars</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find Your Dream Car</h1>
+        <p>Luxury, Performance & Reliability All In One Place</p>
+        <a href="#cars" class="btn">Browse Vehicles</a>
+    </div>
+</section>
+
+<section class="search-section">
+    <h2>Search Vehicles</h2>
+    <input type="text" id="searchInput" placeholder="Search by vehicle name...">
+</section>
+
+<section class="cars" id="cars">
+
+    <h2 class="section-title">Featured Vehicles</h2>
+
+    <div class="car-grid">
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
+            <div class="car-info">
+                <h3>Toyota Supra</h3>
+                <p>Sport Coupe • Automatic</p>
+                <div class="price">$55,000</div>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
+            <div class="car-info">
+                <h3>BMW M4</h3>
+                <p>Performance Coupe</p>
+                <div class="price">$78,500</div>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80">
+            <div class="car-info">
+                <h3>Mercedes AMG GT</h3>
+                <p>Luxury Sports Car</p>
+                <div class="price">$110,000</div>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80">
+            <div class="car-info">
+                <h3>Audi RS7</h3>
+                <p>Luxury Sedan</p>
+                <div class="price">$95,000</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <p>
+        DriveLux Motors specializes in premium and luxury vehicles.
+        We offer carefully selected cars with transparent pricing,
+        detailed inspections, and exceptional customer service.
+        Whether you're looking for a sports car, SUV, or luxury sedan,
+        we help you drive home with confidence.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: sales@driveluxmotors.com</p>
+    <p>Phone: +964 750 000 0000</p>
+    <p>Sulaymaniyah, Iraq</p>
+</section>
+
+<footer>
+    © 2026 DriveLux Motors. All Rights Reserved.
+</footer>
+
+<script>
+// Vehicle Search
+
+const searchInput = document.getElementById('searchInput');
+const cards = document.querySelectorAll('.car-card');
+
+searchInput.addEventListener('keyup', function(){
+
+    let searchValue = this.value.toLowerCase();
+
+    cards.forEach(card => {
+
+        let title = card.querySelector('h3').textContent.toLowerCase();
+
+        if(title.includes(searchValue)){
+            card.style.display = 'block';
+        }else{
+            card.style.display = 'none';
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>
